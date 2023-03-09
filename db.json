@@ -1,0 +1,76 @@
+{
+  "products": [
+    {
+      "productName": "Black Shirt",
+      "img": "https://images.tokopedia.net/img/cache/300-square/product-1/2017/7/7/3453155/3453155_2fd813d6-d997-4c21-bd0f-df19d5e6fe5c_1000_1074.jpg",
+      "price": 43000,
+      "id": 1
+    },
+    {
+      "productName": "Indomie Ramen",
+      "img": "https://images.tokopedia.net/img/cache/200-square/VqbcmM/2023/3/6/a8e581e9-7d56-4c8c-a378-e03af3391d41.jpg",
+      "price": 12099,
+      "id": 2
+    },
+    {
+      "productName": "Phone Case",
+      "img": "https://images.tokopedia.net/img/cache/200-square/VqbcmM/2022/10/16/d302a89d-a654-4c09-8d3d-eba89990fa7f.jpg",
+      "price": 40200,
+      "id": 3
+    },
+    {
+      "productName": "Kitchen Utensil",
+      "img": "https://images.tokopedia.net/img/cache/200-square/VqbcmM/2021/9/20/82e1c863-cb49-4899-84ce-2021954f922d.jpg",
+      "price": 149900,
+      "id": 4
+    },
+    {
+      "productName": "Office Chair",
+      "img": "https://images.tokopedia.net/img/cache/200-square/VqbcmM/2022/11/4/5210e992-b572-48b2-bb1b-15d004e2c811.jpg",
+      "price": 299000,
+      "id": 5
+    },
+    {
+      "productName": "Cosmos Fan",
+      "img": "https://images.tokopedia.net/img/cache/200-square/VqbcmM/2022/1/25/6442b5ae-396c-4e8f-8501-b8ef89e7bde1.jpg",
+      "price": 215000,
+      "id": 6
+    },
+    {
+      "productName": "XBOX Controller",
+      "img": "https://images.tokopedia.net/img/cache/200-square/VqbcmM/2021/10/9/0ebc70c1-54f5-41d2-83c4-b0765eaaa6ad.jpg",
+      "price": 797000,
+      "id": 7
+    },
+    {
+      "productName": "Yoga Socks",
+      "img": "https://images.tokopedia.net/img/cache/200-square/VqbcmM/2022/7/8/13117720-132d-48a1-9326-68fca0f9bf40.jpg",
+      "price": 58000,
+      "id": 8
+    },
+    {
+      "productName": "Waist Bag",
+      "img": "https://images.tokopedia.net/img/cache/200-square/VqbcmM/2023/2/22/02ed21e2-0ad0-44cd-a225-0298e3c53d6a.jpg.webp?ect=4g",
+      "price": 136165,
+      "id": 9
+    },
+    {
+      "productName": "Coconut Oil",
+      "img": "https://images.tokopedia.net/img/cache/200-square/VqbcmM/2021/6/19/157b27a0-e1e8-48a6-8df3-bda1daa378cc.jpg",
+      "price": 70000,
+      "id": 10
+    },
+    {
+      "productName": "Lint Roller",
+      "img": "https://images.tokopedia.net/img/cache/200-square/hDjmkQ/2022/11/19/0cf5e5ea-0af4-4bc0-ad94-e2cc91a5e703.jpg",
+      "price": 39000,
+      "id": 11
+    },
+    {
+      "productName": "Butter",
+      "img": "https://images.tokopedia.net/img/cache/200-square/product-1/2020/9/17/110520681/110520681_546f2669-df56-4bbe-9537-a24c9439d633_1000_1000",
+      "price": 17000,
+      "id": 12
+    }
+  ]
+}
