@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchProducts } from "../productsSlice";
 import { BsFillCartPlusFill } from "react-icons/bs";
