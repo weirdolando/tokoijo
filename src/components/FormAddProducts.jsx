@@ -6,16 +6,13 @@ const addProductSchema = Yup.object().shape({
     .min(2, "Too Short!")
     .max(50, "Too Long!")
     .required("Required"),
-  imageUrl: Yup.string()
-    .min(2, "Too Short!")
-    .max(50, "Too Long!")
-    .required("Required"),
+  imageUrl: Yup.string().url().required("Required"),
   price: Yup.number().required().positive().integer(),
 });
 
 export const FormAddProducts = () => (
   <div>
-    <h2 className="font-bold text-xl my-4">Add Products</h2>
+    <h2 className="font-bold text-2xl my-4">Add Products</h2>
     <Formik
       initialValues={{
         productName: "",
@@ -29,7 +26,7 @@ export const FormAddProducts = () => (
     >
       {({ errors, touched }) => (
         <Form>
-          <label className="block" htmlFor="productName">
+          <label className="block font-semibold" htmlFor="productName">
             Product Name
           </label>
           <Field
@@ -38,9 +35,9 @@ export const FormAddProducts = () => (
             name="productName"
           />
           {errors.productName && touched.productName ? (
-            <div>{errors.productName}</div>
+            <div className="text-red-500 text-sm">{errors.productName}</div>
           ) : null}
-          <label className="block" htmlFor="imgUrl">
+          <label className="block mt-2 font-semibold" htmlFor="imgUrl">
             Image URL
           </label>
           <Field
@@ -49,9 +46,9 @@ export const FormAddProducts = () => (
             name="imageUrl"
           />
           {errors.imageUrl && touched.imageUrl ? (
-            <div>{errors.imageUrl}</div>
+            <div className="text-red-500 text-sm">{errors.imageUrl}</div>
           ) : null}
-          <label className="block" htmlFor="price">
+          <label className="block mt-2 font-semibold" htmlFor="price">
             Price
           </label>
           <Field
@@ -60,9 +57,11 @@ export const FormAddProducts = () => (
             name="price"
             type="number"
           />
-          {errors.price && touched.price ? <div>{errors.price}</div> : null}
+          {errors.price && touched.price ? (
+            <div className="text-red-500 text-sm">{errors.price}</div>
+          ) : null}
           <button
-            className="block bg-green-500 rounded-md px-4 py-2 text-zinc-200"
+            className="block mt-4 bg-green-500 rounded-md px-4 py-2 text-zinc-200"
             type="submit"
           >
             Add
