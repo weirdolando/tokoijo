@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
-import { setProducts } from "../productsSlice";
+import { fetchProducts } from "../productsSlice";
 import { BsFillCartPlusFill } from "react-icons/bs";
 import { addItem } from "../cartSlice";
 
@@ -9,9 +9,7 @@ function Products({ filter }) {
   const products = useSelector((state) => state.products);
   const dispatch = useDispatch();
   useEffect(() => {
-    axios.get("http://localhost:2000/products").then((res) => {
-      dispatch(setProducts(res.data));
-    });
+    dispatch(fetchProducts());
   }, []);
 
   const handleAdd = (id) => {

@@ -1,6 +1,5 @@
 import React from "react";
-import { Formik } from "formik";
-import { FormAddProducts } from "./FormAddProducts";
+import FormAddProducts from "./FormAddProducts";
 
 function Admin() {
   return (

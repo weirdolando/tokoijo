@@ -71,6 +71,18 @@
       "img": "https://images.tokopedia.net/img/cache/200-square/product-1/2020/9/17/110520681/110520681_546f2669-df56-4bbe-9537-a24c9439d633_1000_1000",
       "price": 17000,
       "id": 12
+    },
+    {
+      "productName": "Facial Tissue",
+      "img": "https://images.tokopedia.net/img/cache/200-square/VqbcmM/2022/10/27/b078b516-dc87-47e9-bfb1-9c363dbc81fc.jpg",
+      "price": 102600,
+      "id": 13
+    },
+    {
+      "productName": "Rain Coat",
+      "img": "https://images.tokopedia.net/img/cache/200-square/VqbcmM/2022/8/13/5a3ba416-f429-498d-9385-4d055c5ee183.jpg",
+      "price": 74999,
+      "id": 14
     }
   ]
 }
