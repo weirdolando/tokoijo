@@ -6,7 +6,8 @@ import { AiOutlineSearch } from "react-icons/ai";
 import { useSelector } from "react-redux";
 
 function Navbar({ onFilter }) {
-  const match = useMatch("/cart");
+  const matchCart = useMatch("/cart");
+  const matchAdmin = useMatch("/admin");
   const cartItems = useSelector((state) => state.cart);
 
   const cartElements = cartItems.map((cartItem) => (
@@ -29,7 +30,7 @@ function Navbar({ onFilter }) {
     </div>
   ));
 
-  return !match ? (
+  return !matchCart && !matchAdmin ? (
     <header className="px-4 py-2 shadow-md">
       <nav className="flex justify-between items-center gap-5">
         <Link to="/" className="font-logo text-green-500 text-2xl">
@@ -74,6 +75,20 @@ function Navbar({ onFilter }) {
         >
           <BsFillPersonFill className="text-xl" />
         </Link>
+        <div className="text-sm px-4 border-l-2 py-1">
+          <Link
+            className="rounded-md text-green-600 py-1 px-4 border-green-600 border font-semibold"
+            to="/login"
+          >
+            Login
+          </Link>
+          <Link
+            className="rounded-md text-zinc-200 py-1 px-4 bg-green-600 font-semibold ml-2"
+            to="/register"
+          >
+            Register
+          </Link>
+        </div>
       </nav>
     </header>
   ) : (
@@ -82,7 +97,7 @@ function Navbar({ onFilter }) {
         <Link to="/" className="font-logo text-green-500 text-2xl">
           <BsArrowLeftShort />
         </Link>
-        <p className="font-semibold">Cart</p>
+        <p className="font-semibold">{matchCart ? "Cart" : "Admin"}</p>
       </nav>
     </header>
   );
