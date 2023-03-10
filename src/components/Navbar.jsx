@@ -1,13 +1,13 @@
 import React from "react";
-import { useMatch, Link } from "react-router-dom";
+import { useMatch, useLocation, Link } from "react-router-dom";
 import { RiShoppingCartFill } from "react-icons/ri";
 import { BsArrowLeftShort, BsFillPersonFill } from "react-icons/bs";
 import { AiOutlineSearch } from "react-icons/ai";
 import { useSelector } from "react-redux";
 
 function Navbar({ onFilter }) {
-  const matchCart = useMatch("/cart");
-  const matchAdmin = useMatch("/admin");
+  const currPath = useLocation().pathname;
+  const matchRoot = useMatch("/");
   const cartItems = useSelector((state) => state.cart);
 
   const cartElements = cartItems.map((cartItem) => (
@@ -30,7 +30,7 @@ function Navbar({ onFilter }) {
     </div>
   ));
 
-  return !matchCart && !matchAdmin ? (
+  return matchRoot ? (
     <header className="px-4 py-2 shadow-md">
       <nav className="flex justify-between items-center gap-5">
         <Link to="/" className="font-logo text-green-500 text-2xl">
@@ -97,7 +97,9 @@ function Navbar({ onFilter }) {
         <Link to="/" className="font-logo text-green-500 text-2xl">
           <BsArrowLeftShort />
         </Link>
-        <p className="font-semibold">{matchCart ? "Cart" : "Admin"}</p>
+        <p className="font-semibold">
+          {currPath[1].toUpperCase() + currPath.substring(2)}
+        </p>
       </nav>
     </header>
   );
