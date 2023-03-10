@@ -4,11 +4,10 @@ import * as Yup from "yup";
 import YupPassword from "yup-password";
 YupPassword(Yup);
 import { useDispatch } from "react-redux";
+import { registerUser } from "../reducers/usersSlice";
 
 const registerSchema = Yup.object().shape({
-  username: Yup.string()
-    .min(6, "Username must be at least 6 characters")
-    .required(),
+  name: Yup.string().min(6, "Name must be at least 6 characters").required(),
   email: Yup.string().email("Invalid email").required("Required"),
   /**
    * By default: password must be at least 8 characters',1 uppercase letter',1 number', 1 symbol'
@@ -31,30 +30,28 @@ export default function RegisterForm() {
       </p>
       <Formik
         initialValues={{
-          username: "",
+          name: "",
           email: "",
           password: "",
         }}
         validationSchema={registerSchema}
         onSubmit={(values, { resetForm }) => {
-          //FIXME: Dispatch to register userSlice
-          // dispatch(postProduct(values));
-          console.log(values);
+          dispatch(registerUser(values));
           resetForm();
         }}
       >
         {({ errors, touched }) => (
           <Form>
-            <label className="block font-semibold" htmlFor="username">
-              Username
+            <label className="block font-semibold" htmlFor="name">
+              Name
             </label>
             <Field
               className="border-2 rounded-md px-2 py-1 w-full"
-              id="username"
-              name="username"
+              id="name"
+              name="name"
             />
-            {errors.username && touched.username ? (
-              <div className="text-red-500 text-sm">{errors.username}</div>
+            {errors.name && touched.name ? (
+              <div className="text-red-500 text-sm">{errors.name}</div>
             ) : null}
             <label className="block font-semibold" htmlFor="email">
               Email
@@ -83,10 +80,10 @@ export default function RegisterForm() {
               className="block mt-4 bg-green-500 rounded-md px-4 py-2 text-zinc-200"
               type="submit"
             >
-              Login
+              Register
             </button>
             <div className="text-sm text-center mt-4">
-              <span>"Already have an account?"</span>{" "}
+              <span>Already have an account?</span>{" "}
               <Link
                 to="/login"
                 className="text-green-500 hover:underline decoration-green-500"

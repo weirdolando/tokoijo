@@ -1,7 +1,7 @@
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { useDispatch } from "react-redux";
-import { postProduct } from "../productsSlice";
+import { postProduct } from "../reducers/productsSlice";
 
 const addProductSchema = Yup.object().shape({
   productName: Yup.string()

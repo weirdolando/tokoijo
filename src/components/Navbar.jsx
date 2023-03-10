@@ -1,14 +1,23 @@
 import React from "react";
-import { useMatch, useLocation, Link } from "react-router-dom";
+import { useMatch, useLocation, Link, useNavigate } from "react-router-dom";
 import { RiShoppingCartFill } from "react-icons/ri";
 import { BsArrowLeftShort, BsFillPersonFill } from "react-icons/bs";
 import { AiOutlineSearch } from "react-icons/ai";
-import { useSelector } from "react-redux";
+import { useSelector, useDispatch } from "react-redux";
+import { logoutUser } from "../reducers/usersSlice";
 
 function Navbar({ onFilter }) {
   const currPath = useLocation().pathname;
   const matchRoot = useMatch("/");
   const cartItems = useSelector((state) => state.cart);
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const currUserName = useSelector((state) => state.users.loggedUser.name);
+
+  const handleLogout = () => {
+    dispatch(logoutUser());
+    navigate("/login");
+  };
 
   const cartElements = cartItems.map((cartItem) => (
     <div key={cartItem.id} className="flex border-t py-2 gap-2 items-center">
@@ -75,19 +84,35 @@ function Navbar({ onFilter }) {
         >
           <BsFillPersonFill className="text-xl" />
         </Link>
-        <div className="text-sm px-4 border-l-2 py-1">
-          <Link
-            className="rounded-md text-green-600 py-1 px-4 border-green-600 border font-semibold"
-            to="/login"
-          >
-            Login
-          </Link>
-          <Link
-            className="rounded-md text-zinc-200 py-1 px-4 bg-green-600 font-semibold ml-2"
-            to="/register"
-          >
-            Register
-          </Link>
+        <div className="text-sm px-4 border-l-2 py-1 flex items-center gap-4">
+          {currUserName ? (
+            <>
+              <button
+                className="rounded-md text-green-600 py-1 px-4 border-green-600 border font-semibold"
+                onClick={handleLogout}
+              >
+                Logout
+              </button>
+              <span className="font-semibold text-green-500 max-w-[90px] truncate">
+                Hi, {currUserName}!
+              </span>
+            </>
+          ) : (
+            <>
+              <Link
+                className="rounded-md text-green-600 py-1 px-4 border-green-600 border font-semibold"
+                to="/login"
+              >
+                Login
+              </Link>
+              <Link
+                className="rounded-md text-zinc-200 py-1 px-4 bg-green-600 font-semibold"
+                to="/register"
+              >
+                Register
+              </Link>
+            </>
+          )}
         </div>
       </nav>
     </header>

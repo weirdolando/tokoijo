@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import FormAddProducts from "./FormAddProducts";
-import { fetchProducts, deleteProduct } from "../productsSlice";
+import { fetchProducts, deleteProduct } from "../reducers/productsSlice";
 import { BsTrash } from "react-icons/bs";
 
 function Admin() {

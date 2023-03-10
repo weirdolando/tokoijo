@@ -1,20 +1,19 @@
 import { Formik, Form, Field } from "formik";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import * as Yup from "yup";
 import YupPassword from "yup-password";
 YupPassword(Yup);
+import { loginUser } from "../reducers/usersSlice";
 import { useDispatch } from "react-redux";
 
 const loginSchema = Yup.object().shape({
   email: Yup.string().email("Invalid email").required("Required"),
-  password: Yup.string()
-    .min(6, "Password must be at least 6 characters")
-    .password()
-    .required(),
+  password: Yup.string().required(),
 });
 
 export default function LoginForm() {
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   return (
     <div>
       <h2 className="font-bold text-2xl my-4">Login</h2>
@@ -25,10 +24,9 @@ export default function LoginForm() {
         }}
         validationSchema={loginSchema}
         onSubmit={(values, { resetForm }) => {
-          //FIXME: Dispatch to login userSlice
-          // dispatch(postProduct(values));
-          console.log(values);
+          dispatch(loginUser(values));
           resetForm();
+          navigate("/");
         }}
       >
         {({ errors, touched }) => (

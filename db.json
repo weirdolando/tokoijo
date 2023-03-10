@@ -78,5 +78,25 @@
       "price": 74999,
       "id": 14
     }
+  ],
+  "users": [
+    {
+      "name": "Weirdo Lando",
+      "email": "lando@example.com",
+      "password": "Secret123*",
+      "id": 1
+    },
+    {
+      "name": "John Doe",
+      "email": "johndoe@example.com",
+      "password": "john123*",
+      "id": 2
+    },
+    {
+      "name": "Kody Koala",
+      "email": "kody@example.com",
+      "password": "Kody123*",
+      "id": 3
+    }
   ]
 }

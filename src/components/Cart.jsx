@@ -1,9 +1,8 @@
-import { useState } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { IoIosAddCircleOutline } from "react-icons/io";
 import { AiOutlineMinusCircle } from "react-icons/ai";
 import { BsTrash } from "react-icons/bs";
-import { addItem, minusItem, deleteItem } from "../cartSlice";
+import { addItem, minusItem, deleteItem } from "../reducers/cartSlice";
 
 function Cart() {
   const dispatch = useDispatch();

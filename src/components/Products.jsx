@@ -1,8 +1,8 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchProducts } from "../productsSlice";
+import { fetchProducts } from "../reducers/productsSlice";
 import { BsFillCartPlusFill } from "react-icons/bs";
-import { addItem } from "../cartSlice";
+import { addItem } from "../reducers/cartSlice";
 
 function Products({ filter }) {
   const products = useSelector((state) => state.products);
